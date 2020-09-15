@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="keywords" content="star,stars,space,universe,night,sky" />
+        <meta name="description" content="Stars blinking in the night sky." />
+        <meta http-equiv="refresh" content="205" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Stars" />
+        <meta property="og:description" content="Stars blinking in the night sky." />
+        <meta name="theme-color" content="#140D29" />
+        <title>Stars (Screensaver Mode)</title>
+        
+        <style>
+            body {
+                background-color: black;
+            }
+
+            div {
+                position: absolute;
+                background: white;
+                height: 1px;
+                width: 1px;
+                border: 1px solid white;
+            }
+
+            p {
+                color: darkblue;
+                text-align: center;
+                font-size: 40px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function removeText(){
+                const text = document.querySelector("p");
+                text.remove();
+            }
+
+            function createNewStar(){
+                const star = document.createElement("div");
+                const y = Math.floor((Math.random() * 1006)) + "px";
+                const x = Math.floor((Math.random() * 1265)) + "px";
+
+                star.style.top = y;
+                star.style.left = x;
+                document.body.appendChild(star);
+            }
+
+            setInterval(() => {
+                window.location.replace(window.location);
+            }, 205000);
+            setInterval(createNewStar, 1e3);
+            setTimeout(removeText, 5e3);
+        </script>
+    </body>
+</html>
