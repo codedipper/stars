@@ -32,8 +32,8 @@
         <script>
             function createNewStar(){
                 const star = document.createElement("div");
-                const y = Math.floor((Math.random() * 1006)) + "px";
-                const x = Math.floor((Math.random() * 1265)) + "px";
+                const y = Math.floor((Math.random() * window.innerHeight - 3)) + "px";
+                const x = Math.floor((Math.random() * window.innerWidth) - 3) + "px";
 
                 star.style.top = y;
                 star.style.left = x;
