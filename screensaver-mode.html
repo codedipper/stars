@@ -16,6 +16,8 @@
         
         <style>
             body {
+                margin: 0;
+                overflow: hidden;
                 background-color: black;
             }
 
@@ -32,17 +34,15 @@
         <script>
             function createNewStar(){
                 const star = document.createElement("div");
-                const y = Math.floor((Math.random() * window.innerHeight - 3)) + "px";
-                const x = Math.floor((Math.random() * window.innerWidth) - 3) + "px";
+                const y = Math.floor((Math.random() * window.innerHeight)) + "px";
+                const x = Math.floor((Math.random() * window.innerWidth)) + "px";
 
                 star.style.top = y;
                 star.style.left = x;
                 document.body.appendChild(star);
             }
 
-            setInterval(() => {
-                window.location.replace(window.location);
-            }, 205000);
+            setInterval(() => window.location.reload(), 205000);
             setInterval(createNewStar, 1e3);
         </script>
     </body>
