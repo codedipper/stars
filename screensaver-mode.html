@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="keywords" content="star,stars,space,universe,night,sky" />
         <meta name="description" content="Stars blinking in the night sky." />
-        <meta http-equiv="refresh" content="205" />
+        <meta http-equiv="refresh" content="120" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Stars" />
@@ -26,25 +26,25 @@
                 background: white;
                 height: 1px;
                 width: 1px;
-                border: 1px solid white;
+                border: 1px thin white;
             }
         </style>
     </head>
     <body>
         <script>
             function createNewStar(){
+                const { floor, random } = Math;
                 const star = document.createElement("div");
-                const y = Math.floor((Math.random() * window.innerHeight)) + "px";
-                const x = Math.floor((Math.random() * window.innerWidth)) + "px";
+                const y = floor((random() * window.innerHeight)) + "px";
+                const x = floor((random() * window.innerWidth)) + "px";
 
                 star.style.top = y;
                 star.style.left = x;
                 document.body.appendChild(star);
             }
 
-            setInterval(() => window.location.reload(), 205000);
-            setInterval(createNewStar, 1e3);
+            setInterval(() => window.location.reload(), 120000);
+            setInterval(createNewStar, 200);
         </script>
     </body>
 </html>
-
